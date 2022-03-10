@@ -1,0 +1,48 @@
+@use "~@angular/material" as mat;
+
+@include mat.core();
+
+$nx-web-primary: mat.define-palette(mat.$orange-palette);
+$nx-web-accent: mat.define-palette(mat.$purple-palette, A200, A100, A400);
+$nx-web-warn: mat.define-palette(mat.$red-palette);
+
+$nx-web-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $nx-web-primary,
+      accent: $nx-web-accent,
+      warn: $nx-web-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($nx-web-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Lato, "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .page__content {
+    flex: 1 1 auto;
+    overflow: auto;
+    background-color: rgb(243, 244, 250);
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

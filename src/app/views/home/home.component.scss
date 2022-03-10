@@ -1,0 +1,35 @@
+$page-width: 960px;
+
+.home__navigation {
+    display: flex;
+    flex-direction: row;
+    width: $page-width;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 27px;
+    gap: 10px;
+}
+
+.home__logo {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    text-decoration: none;
+
+    .home__logo-img {
+        height: 27px;
+    }
+
+    h1 {
+        margin: 0;
+        color: black;
+        transition: 0.3s ease opacity;
+    }
+
+    &:hover {
+        h1 {
+            opacity: 0.7;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<div class="navigation">
+    <a class="navigation__logo" routerLink="/">
+        <img class="navigation__logo-img" src="/assets/logo.png" alt="Orange Ember Logo" />
+    </a>
+    <span class="spacer"></span>
+    <div class="navigation__profile" *ngIf="user$ | async as user">
+        <ng-container *ngIf="user.picture; else nameTmpl">
+            <button mat-icon-button [matMenuTriggerFor]="userMenu" class="navigation__profile-button">
+                <img [src]="user.picture" [alt]="user.name" />
+            </button>
+        </ng-container>
+        <ng-template #nameTmpl>
+            <button mat-button [matMenuTriggerFor]="userMenu"> {{ user.name }}</button>
+        </ng-template>
+    </div>
+</div>
+
+<mat-menu #userMenu="matMenu">
+    <button mat-menu-item (click)="onLogoutButtonClick()">Logout</button>
+</mat-menu>

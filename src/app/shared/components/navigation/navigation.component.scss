@@ -1,0 +1,24 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+}
+
+.navigation__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .navigation__logo-img {
+        height: 36px;
+    }
+}
+
+.navigation__profile-button {
+    height: 42px;
+    background-color: transparent;
+    img {
+        height: 100%;
+        border-radius: 50%;
+    }
+}
